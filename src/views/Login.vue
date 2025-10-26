@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import { useNotifications } from '../stores/useNotifications';
-
+import Footer from '../components/Footer.vue';
 const authStore = useAuthStore();
 const router = useRouter();
 const { showSuccess, showError } = useNotifications();
@@ -55,4 +55,5 @@ const handleSubmit = async (e) => {
       </p>
     </form>
   </div>
+  <Footer/>
 </template>

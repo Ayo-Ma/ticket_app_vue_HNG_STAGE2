@@ -33,7 +33,7 @@ const features = [
       <div
         v-for="(f, i) in features"
         :key="i"
-        class="p-8 rounded-2xl bg-white border transition-all hover:scale-105"
+        class="p-8 rounded-2xl bg-white border transition-all shadow-md shadow-gray-300 hover:scale-105"
       >
         <div class="flex justify-center mb-4">
           <component :is="f.icon" class="w-10 h-10 text-gray-600" />

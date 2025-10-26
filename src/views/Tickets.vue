@@ -15,7 +15,7 @@ import {
 } from 'lucide-vue-next';
 import { getTickets, saveTickets } from '../utils/ticketUtils';
 import { useNotifications } from '../stores/useNotifications';
-
+import Footer from '../components/Footer.vue';
 import InputField from '../components/InputField.vue';
 import SelectField from '../components/SelectField.vue';
 import SearchBar from '../components/SearchBar.vue';
@@ -135,7 +135,7 @@ const getStatusColor = (status) => {
 
 <template>
   <section class="max-w-5xl mx-auto px-6 py-8 mt-20 bg-whit rounded-3xl border border-gray-200 shadow-sm my-12">
-    <!-- Header -->
+
     <div class="mb-8">
       <RouterLink
         to="/dashboard"
@@ -165,7 +165,7 @@ const getStatusColor = (status) => {
       </div>
     </div>
 
-    <!-- Form -->
+ 
     <div
       v-if="showForm"
       class="bg-white rounded-2xl p-6 mb-8 border border-gray-200 animate-slide-down"
@@ -228,7 +228,7 @@ const getStatusColor = (status) => {
       </form>
     </div>
 
-    <!-- Search and Filter -->
+    
     <div class="bg-white rounded-xl border border-gray-200 p-4 mb-6">
       <div class="flex flex-col md:flex-row gap-4">
         <SearchBar v-model="searchQuery" />
@@ -236,7 +236,6 @@ const getStatusColor = (status) => {
       </div>
     </div>
 
-    <!-- Tickets Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <template v-if="filteredTickets.length > 0">
         <div
@@ -281,6 +280,7 @@ const getStatusColor = (status) => {
       <EmptyState v-else :show-form="showForm" @create="showForm = true" />
     </div>
   </section>
+  <Footer />
 </template>
 
 <style scoped>

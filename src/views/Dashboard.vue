@@ -3,6 +3,7 @@ import { ref, computed, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import { getTickets } from '../utils/ticketUtils';
+import Footer from '../components/Footer.vue';
 import {
   Ticket,
   CheckCircle2,
@@ -280,4 +281,5 @@ const getStatusBadgeClass = (status) => {
       </div>
     </div>
   </div>
+  <Footer />
 </template>
